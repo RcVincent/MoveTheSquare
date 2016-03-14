@@ -74,14 +74,14 @@ public class GameView extends JPanel {
 			@Override
 			public void run() {
 				Game model = new Game();
-				model.setWidth(640.0);
-				model.setHeight(480.0);
+				model.setWidth(680.0);
+				model.setHeight(520.0);
 				
 				Square square = new Square();
-				square.setX(300.0);
-				square.setY(220.0);
-				square.setWidth(40.0);
-				square.setHeight(40.0);
+				square.setX(280.0);
+				square.setY(200.0);
+				square.setWidth(35.0);
+				square.setHeight(35.0);
 				model.setSquare(square);
 				
 				GameController controller = new GameController();
