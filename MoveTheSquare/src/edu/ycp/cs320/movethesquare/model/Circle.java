@@ -2,7 +2,7 @@ package edu.ycp.cs320.movethesquare.model;
 
 public class Circle {
 	private double x, y;
-	double diameter;
+	double diameter, height;
 
 	public double getX() {
 		return x;
@@ -24,8 +24,17 @@ public class Circle {
 		return diameter;
 	}
 
-	public void setDiameter(int diameter) {
+	public void setDiameter(double diameter) {
 		this.diameter = 1.5 * diameter;
 	}
+	
+	public double getHeight() {
+		return height;
+	}
+	
+	public void setHeight(double diameter) {
+		this.height = 1.5 * height;
+	}
+	
 	
 }

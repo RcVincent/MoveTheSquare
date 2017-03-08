@@ -13,6 +13,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 import edu.ycp.cs320.movethesquare.controllers.GameController;
+import edu.ycp.cs320.movethesquare.model.Circle;
 import edu.ycp.cs320.movethesquare.model.Game;
 import edu.ycp.cs320.movethesquare.model.Square;
 
@@ -67,6 +68,13 @@ public class GameView extends JPanel {
 		Square square = model.getSquare();
 		
 		g.fillRect((int) square.getX(), (int) square.getY(), (int) square.getWidth(), (int) square.getHeight());
+		
+		g.setColor(Color.CYAN);
+		
+		Circle circle = model.getCircle();
+		g.fillOval((int) circle.getX(), (int) circle.getY(), (int) circle.getDiameter(), (int) circle.getHeight());
+		
+		
 	}
 	
 	public static void main(String[] args) {
@@ -78,11 +86,19 @@ public class GameView extends JPanel {
 				model.setHeight(480.0);
 				
 				Square square = new Square();
-				square.setX(300.0);
-				square.setY(220.0);
-				square.setWidth(40.0);
-				square.setHeight(40.0);
+				square.setX(200.0);
+				square.setY(120.0);
+				square.setWidth(30.0);
+				square.setHeight(30.0);
 				model.setSquare(square);
+				
+				Circle circle = new Circle();
+				circle.setX(200);
+				circle.setY(320);
+				circle.setDiameter(30);
+				circle.setHeight(30);
+				model.setCircle(circle);
+				
 				
 				GameController controller = new GameController();
 				
