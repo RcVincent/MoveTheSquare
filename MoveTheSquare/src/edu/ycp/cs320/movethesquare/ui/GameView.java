@@ -59,6 +59,7 @@ public class GameView extends JPanel {
 			controller.computeCircleMoveDirection(model, circle, mouseLoc.getX(), mouseLoc.getY());
 		}
 		controller.moveSquare(model, square);
+		controller.moveCircle(model, circle);
 		repaint();
 	}
 	
@@ -96,7 +97,7 @@ public class GameView extends JPanel {
 				model.setSquare(square);
 				
 				Circle circle = new Circle();
-				circle.setX(200);
+				circle.setX(400);
 				circle.setY(320);
 				circle.setDiameter(30);
 				circle.setHeight(30);
