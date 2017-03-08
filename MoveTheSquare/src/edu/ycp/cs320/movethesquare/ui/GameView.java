@@ -51,9 +51,12 @@ public class GameView extends JPanel {
 			return;
 		}
 		Square square = model.getSquare();
+		Circle circle = model.getCircle();
+		
 		Point mouseLoc = getMousePosition();
 		if (mouseLoc != null) {
 			controller.computeSquareMoveDirection(model, square, mouseLoc.getX(), mouseLoc.getY());
+			controller.computeCircleMoveDirection(model, circle, mouseLoc.getX(), mouseLoc.getY());
 		}
 		controller.moveSquare(model, square);
 		repaint();
