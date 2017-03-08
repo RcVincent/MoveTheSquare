@@ -2,6 +2,7 @@ package edu.ycp.cs320.movethesquare.controllers;
 
 import edu.ycp.cs320.movethesquare.model.Game;
 import edu.ycp.cs320.movethesquare.model.Square;
+import edu.ycp.cs320.movethesquare.model.Circle;
 
 public class GameController {
 	public void computeSquareMoveDirection(Game game, Square square, double mouseX, double mouseY) {
@@ -23,6 +24,9 @@ public class GameController {
 			
 			game.setSquareDx(moveX);
 			game.setSquareDy(moveY);
+			game.setCircleDx(-moveX);
+			game.setCircleDy(-moveY);
+			
 		}
 	}
 
@@ -31,11 +35,16 @@ public class GameController {
 		square.setY(square.getY() + model.getSquareDy());
 	}
 	
+	public void moveCircle(Game model, Circle circle) {
+		circle.setX(circle.getX()+ model.getCircleDx());
+		circle.setY(circle.getY() + model.getCircleDy());
+	}
+	
 	public void detectColision(Game model, Square square) {
-		if(square.getX() >= model.getWidth() || square.getX() < 0) {
+		if(square.getX() <= model.getWidth() || square.getX() > 0) {
 			model.setSquareDx(0);
 		}
-		if(square.getY() >= model.getHeight() || square.getY() < 0) {
+		if(square.getY() < model.getHeight() || square.getY() > 0) {
 			model.setSquareDy(0);
 		}
 	}
