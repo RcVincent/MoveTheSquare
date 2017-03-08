@@ -30,4 +30,13 @@ public class GameController {
 		square.setX(square.getX() + model.getSquareDx());
 		square.setY(square.getY() + model.getSquareDy());
 	}
+	
+	public void detectColision(Game model, Square square) {
+		if(square.getX() >= model.getWidth() || square.getX() < 0) {
+			model.setSquareDx(0);
+		}
+		if(square.getY() >= model.getHeight() || square.getY() < 0) {
+			model.setSquareDy(0);
+		}
+	}
 }

@@ -36,7 +36,7 @@ public class Game {
 	}
 	
 	public void setSquareDx(double squareDx) {
-		this.squareDx = squareDx;
+		this.squareDx = 1.25 * squareDx;
 	}
 	
 	public double getSquareDx() {
@@ -44,7 +44,7 @@ public class Game {
 	}
 	
 	public void setSquareDy(double squareDy) {
-		this.squareDy = squareDy;
+		this.squareDy = 1.25 * squareDy;
 	}
 	
 	public double getSquareDy() {
